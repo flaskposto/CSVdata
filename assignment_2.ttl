@@ -1,0 +1,312 @@
+@prefix : <http://www.semanticweb.org/thushiniranasinghe/ontologies/2023/3/untitled-ontology-4/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/thushiniranasinghe/ontologies/2023/3/untitled-ontology-4/> .
+
+<http://www.semanticweb.org/thushiniranasinghe/ontologies/2023/3/untitled-ontology-4> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/thushiniranasinghe/ontologies/2023/3/untitled-ontology-4#BelongsTo
+:BelongsTo rdf:type owl:ObjectProperty ;
+           rdfs:domain :Teacher ;
+           rdfs:range :Division .
+
+
+###  http://www.semanticweb.org/thushiniranasinghe/ontologies/2023/3/untitled-ontology-4#ContainedBy
+:ContainedBy rdf:type owl:ObjectProperty ;
+             rdfs:domain :ProgrammeCourse ;
+             rdfs:range :Programme .
+
+
+###  http://www.semanticweb.org/thushiniranasinghe/ontologies/2023/3/untitled-ontology-4#DirectedBy
+:DirectedBy rdf:type owl:ObjectProperty ;
+            rdfs:domain :Programme ;
+            rdfs:range :SeniorTeacher .
+
+
+###  http://www.semanticweb.org/thushiniranasinghe/ontologies/2023/3/untitled-ontology-4#ExaminedBy
+:ExaminedBy rdf:type owl:ObjectProperty ;
+            rdfs:domain :CourseInstance ;
+            rdfs:range :SeniorTeacher .
+
+
+###  http://www.semanticweb.org/thushiniranasinghe/ontologies/2023/3/untitled-ontology-4#Given
+:Given rdf:type owl:ObjectProperty ;
+       rdfs:domain :ProgrammeCourse ;
+       rdfs:range :Course .
+
+###  http://www.semanticweb.org/thushiniranasinghe/ontologies/2023/3/untitled-ontology-4#GivenByDivision
+:GivenByDivision rdf:type owl:ObjectProperty ;
+       rdfs:domain :Course ;
+       rdfs:range :Division .
+
+
+###  http://www.semanticweb.org/thushiniranasinghe/ontologies/2023/3/untitled-ontology-4#GivenBy
+:GivenBy rdf:type owl:ObjectProperty ;
+         rdfs:domain :Programme ;
+         rdfs:range :Dept .
+
+
+###  http://www.semanticweb.org/thushiniranasinghe/ontologies/2023/3/untitled-ontology-4#IsCourse
+:IsCourse rdf:type owl:ObjectProperty ;
+          rdfs:domain :CourseInstance ;
+          rdfs:range :Course .
+
+
+###  http://www.semanticweb.org/thushiniranasinghe/ontologies/2023/3/untitled-ontology-4#IsGivenForInstance
+:IsGivenForInstance rdf:type owl:ObjectProperty ;
+                    rdfs:domain :Registration ;
+                    rdfs:range :CourseInstance .
+
+
+###  http://www.semanticweb.org/thushiniranasinghe/ontologies/2023/3/untitled-ontology-4#IsGivenForStudent
+:IsGivenForStudent rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Registration ;
+                   rdfs:range :Student .
+
+
+###  http://www.semanticweb.org/thushiniranasinghe/ontologies/2023/3/untitled-ontology-4#OwnedBy
+:OwnedBy rdf:type owl:ObjectProperty ;
+         rdfs:domain :Course ;
+         rdfs:range :Programme .
+
+
+###  http://www.semanticweb.org/thushiniranasinghe/ontologies/2023/3/untitled-ontology-4#PartOf
+:PartOf rdf:type owl:ObjectProperty ;
+        rdfs:domain :Division ;
+        rdfs:range :Dept .
+
+
+###  http://www.semanticweb.org/thushiniranasinghe/ontologies/2023/3/untitled-ontology-4#WorkedBy
+:WorkedBy rdf:type owl:ObjectProperty ;
+          rdfs:domain :WorkHours ;
+          rdfs:range :Teacher .
+
+
+###  http://www.semanticweb.org/thushiniranasinghe/ontologies/2023/3/untitled-ontology-4#WorkedIn
+:WorkedIn rdf:type owl:ObjectProperty ;
+          rdfs:domain :WorkHours ;
+          rdfs:range :CourseInstance .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/thushiniranasinghe/ontologies/2023/3/untitled-ontology-4#academicInstanceYear
+:academicInstanceYear rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :CourseInstance ;
+                      rdfs:range xsd:dateTime .
+
+
+###  http://www.semanticweb.org/thushiniranasinghe/ontologies/2023/3/untitled-ontology-4#academicYear
+:academicYear rdf:type owl:DatatypeProperty ;
+              rdfs:domain :ProgrammeCourse ;
+              rdfs:range xsd:dateTime .
+
+
+###  http://www.semanticweb.org/thushiniranasinghe/ontologies/2023/3/untitled-ontology-4#assignedHours
+:assignedHours rdf:type owl:DatatypeProperty ;
+               rdfs:domain :WorkHours ;
+               rdfs:range xsd:double .
+
+
+###  http://www.semanticweb.org/thushiniranasinghe/ontologies/2023/3/untitled-ontology-4#courseCode
+:courseCode rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Course ;
+            rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/thushiniranasinghe/ontologies/2023/3/untitled-ontology-4#courseName
+:courseName rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Course ;
+            rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/thushiniranasinghe/ontologies/2023/3/untitled-ontology-4#courseType
+:courseType rdf:type owl:DatatypeProperty ;
+            rdfs:domain :ProgrammeCourse ;
+            rdfs:range rdfs:Literal .
+
+
+###  http://www.semanticweb.org/thushiniranasinghe/ontologies/2023/3/untitled-ontology-4#credits
+:credits rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Course ;
+         rdfs:range xsd:double .
+
+
+###  http://www.semanticweb.org/thushiniranasinghe/ontologies/2023/3/untitled-ontology-4#deptName
+:deptName rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Dept ;
+          rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/thushiniranasinghe/ontologies/2023/3/untitled-ontology-4#divName
+:divName rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Division ;
+         rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/thushiniranasinghe/ontologies/2023/3/untitled-ontology-4#grade
+:grade rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Registration ;
+       rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/thushiniranasinghe/ontologies/2023/3/untitled-ontology-4#graduated
+:graduated rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Student ;
+           rdfs:range xsd:boolean .
+
+
+###  http://www.semanticweb.org/thushiniranasinghe/ontologies/2023/3/untitled-ontology-4#seniorHours
+:seniorHours rdf:type owl:DatatypeProperty ;
+       rdfs:domain :CourseInstance ;
+       rdfs:range xsd:double .
+
+
+###  http://www.semanticweb.org/thushiniranasinghe/ontologies/2023/3/untitled-ontology-4#assistantHours
+:assistantHours rdf:type owl:DatatypeProperty ;
+       rdfs:domain :CourseInstance ;
+       rdfs:range xsd:double .
+
+
+###  http://www.semanticweb.org/thushiniranasinghe/ontologies/2023/3/untitled-ontology-4#instanceId
+:instanceId rdf:type owl:DatatypeProperty ;
+            rdfs:domain :CourseInstance .
+
+
+###  http://www.semanticweb.org/thushiniranasinghe/ontologies/2023/3/untitled-ontology-4#level
+:level rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Course ;
+       rdfs:range rdfs:Literal .
+
+
+###  http://www.semanticweb.org/thushiniranasinghe/ontologies/2023/3/untitled-ontology-4#planningNumStudents
+:planningNumStudents rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :CourseInstance ;
+                     rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/thushiniranasinghe/ontologies/2023/3/untitled-ontology-4#programmeCode
+:programmeCode rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Programme ;
+               rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/thushiniranasinghe/ontologies/2023/3/untitled-ontology-4#programmeName
+:programmeName rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Programme ;
+               rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/thushiniranasinghe/ontologies/2023/3/untitled-ontology-4#reportedHours
+:reportedHours rdf:type owl:DatatypeProperty ;
+               rdfs:domain :WorkHours ;
+               rdfs:range xsd:double .
+
+
+###  http://www.semanticweb.org/thushiniranasinghe/ontologies/2023/3/untitled-ontology-4#status
+:status rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Registration ;
+        rdfs:range rdfs:Literal .
+
+
+###  http://www.semanticweb.org/thushiniranasinghe/ontologies/2023/3/untitled-ontology-4#studentId
+:studentId rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Student ;
+           rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/thushiniranasinghe/ontologies/2023/3/untitled-ontology-4#studentName
+:studentName rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Student ;
+             rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/thushiniranasinghe/ontologies/2023/3/untitled-ontology-4#studyPeriod
+:studyPeriod rdf:type owl:DatatypeProperty ;
+             rdfs:domain :CourseInstance ;
+             rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/thushiniranasinghe/ontologies/2023/3/untitled-ontology-4#studyYear
+:studyYear rdf:type owl:DatatypeProperty ;
+           rdfs:domain :ProgrammeCourse ;
+           rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/thushiniranasinghe/ontologies/2023/3/untitled-ontology-4#teacherId
+:teacherId rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Teacher ;
+           rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/thushiniranasinghe/ontologies/2023/3/untitled-ontology-4#teacherName
+:teacherName rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Teacher ;
+             rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/thushiniranasinghe/ontologies/2023/3/untitled-ontology-4#year
+:year rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Student ;
+      rdfs:range xsd:dateTime .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/thushiniranasinghe/ontologies/2023/3/untitled-ontology-4#Course
+:Course rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/thushiniranasinghe/ontologies/2023/3/untitled-ontology-4#CourseInstance
+:CourseInstance rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/thushiniranasinghe/ontologies/2023/3/untitled-ontology-4#Dept
+:Dept rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/thushiniranasinghe/ontologies/2023/3/untitled-ontology-4#Division
+:Division rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/thushiniranasinghe/ontologies/2023/3/untitled-ontology-4#Programme
+:Programme rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/thushiniranasinghe/ontologies/2023/3/untitled-ontology-4#ProgrammeCourse
+:ProgrammeCourse rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/thushiniranasinghe/ontologies/2023/3/untitled-ontology-4#Registration
+:Registration rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/thushiniranasinghe/ontologies/2023/3/untitled-ontology-4#SeniorTeacher
+:SeniorTeacher rdf:type owl:Class ;
+               rdfs:subClassOf :Teacher .
+
+
+###  http://www.semanticweb.org/thushiniranasinghe/ontologies/2023/3/untitled-ontology-4#Student
+:Student rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/thushiniranasinghe/ontologies/2023/3/untitled-ontology-4#Teacher
+:Teacher rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/thushiniranasinghe/ontologies/2023/3/untitled-ontology-4#WorkHours
+:WorkHours rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi
